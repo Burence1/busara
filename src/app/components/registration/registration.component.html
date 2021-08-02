@@ -1,0 +1,220 @@
+<div id="back">
+  <div class="backRight">
+    <div class="right-text">
+
+    </div>
+  </div>
+  <div class="backLeft">
+    <div class="left-text">
+
+    </div>
+  </div>
+</div>
+
+<div id="slideBox">
+  <div class="topLayer">
+    <div class="left">
+      <div class="content">
+        <form #formData="ngForm" (ngSubmit)="onRegister(formData)" class="">
+          <h3 class="text-center"><strong>Register</strong></h3>
+          <hr>
+          <table>
+            <tr>
+              <td>
+                <!-- <label for="username" class="form-label">username</label> <br /> -->
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your name</mat-label>
+                  <input placeholder="username" (ngModel)="(username)" id="username" name="username"
+                    #username="ngModel" required minlength="3" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
+                    maxlength="15" />
+                </mat-form-field>
+                <div *ngIf="
+                                        username.invalid && (username.dirty || username.touched)
+                                      " class="alert alert-danger">
+                  <div *ngIf="username.errors?.required">Name is required.</div>
+
+                  <div *ngIf="username.errors?.minlength">
+                    Name must be at least 3 characters long.
+                  </div>
+                  <div *ngIf="username.errors?.pattern">
+                    Name must be alphabetic only.
+                  </div>
+                  <div *ngIf="username.errors?.maxlength">Name is too long.</div>
+                </div>
+              </td>
+              <td>
+                <!-- <label for="email" class="form-label">Email Address</label> <br /> -->
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your email</mat-label>
+                  <input placeholder="janedoe@gmail.com" (ngModel)="(email)" id="email" name="email"
+                    #email="ngModel" required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" minlength="10"
+                    maxlength="30" />
+                </mat-form-field>
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                  <div *ngIf="email.errors?.pattern">Enter a valid email address.</div>
+
+                  <div *ngIf="email.errors?.required">Email is required.</div>
+
+                  <div *ngIf="email.errors?.minlength">
+                    Email must be at least 10 characters long.
+                  </div>
+
+                  <div *ngIf="email.errors?.maxlength">Email is too long.</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- <label for="username" class="form-label">fullname</label> <br /> -->
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your fullname</mat-label>
+                  <input placeholder="full_name" (ngModel)="(full_name)" id="full_name" name="full_name" #full_name="ngModel"
+                    required minlength="3" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" maxlength="15" />
+                </mat-form-field>
+                <div *ngIf="
+                                                      full_name.invalid && (full_name.dirty || full_name.touched)
+                                                    " class="alert alert-danger">
+                  <div *ngIf="full_name.errors?.required">Name is required.</div>
+              
+                  <div *ngIf="full_name.errors?.minlength">
+                    Name must be at least 3 characters long.
+                  </div>
+                  <div *ngIf="full_name.errors?.pattern">
+                    Name must be alphabetic only.
+                  </div>
+                  <div *ngIf="full_name.errors?.maxlength">Name is too long.</div>
+                </div>
+              </td>
+              <td>
+                <!-- <label for="phone_number" class="form-label">Phone number</label> <br /> -->
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your phone number</mat-label>
+                  <input placeholder="phone_number" (ngModel)="(phone_number)" id="phone_number" name="phone_number" #phone_number="ngModel"
+                    required/>
+                </mat-form-field>
+                <div *ngIf="
+                                                      phone_number.invalid && (phone_number.dirty || phone_number.touched)
+                                                    " class="alert alert-danger">
+                  <div *ngIf="phone_number.errors?.required">phone is required.</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your device details</mat-label>
+                  <input placeholder="device_details" (ngModel)="(device_details)" id="device_details" name="device_details"
+                    #device_details="ngModel" required />
+                </mat-form-field>
+                <div *ngIf="
+                                                                    device_details.invalid && (device_details.dirty || device_details.touched)
+                                                                  " class="alert alert-danger">
+                  <div *ngIf="device_details.errors?.required">Details is required.</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- <label for="referral_code" class="form-label">referral code</label> <br /> -->
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your referral code</mat-label>
+                  <input placeholder="referral_code" (ngModel)="(referral_code)" id="referral_code" name="referral_code"
+                    #referral_code="ngModel" />
+                </mat-form-field>
+                <div *ngIf="
+                                                                    referral_code.invalid && (referral_code.dirty || referral_code.touched)
+                                                                  " class="alert alert-danger">
+                </div>
+              </td>
+              <td>
+                <!-- <label for="location" class="form-label">Location</label> <br /> -->
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your Location</mat-label>
+                  <input placeholder="location" (ngModel)="(location)" id="location" name="location"
+                    #location="ngModel" required />
+                </mat-form-field>
+                <div *ngIf="
+                                                                    location.invalid && (location.dirty || location.touched)
+                                                                  " class="alert alert-danger">
+                  <div *ngIf="location.errors?.required">phone is required.</div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- <label for="RegisterPassword" class="form-label">Password1</label> -->
+                <br />
+                <mat-form-field appearance="outline">
+                  <mat-label>Enter your password</mat-label>
+                  <input [type]="hide ? 'password1' : 'text'" placeholder="Password1" (ngModel)="(password1)"
+                    id="password1" name="password1" (input)="password2.control.updateValueAndValidity()"
+                    #password1="ngModel" required maxlength="20" />
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password1'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <div *ngIf="password1.invalid && (password1.dirty || password1.touched)" class="alert alert-danger">
+                  <div *ngIf="password1.errors?.required">Password is required.</div>
+                </div>
+              </td>
+              <td>
+                <!-- <label for="confirmPassword" class="form-label">Password2</label> -->
+                <br />
+                <mat-form-field appearance="outline">
+                  <mat-label>Type password again</mat-label>
+                  <input [type]="hide ? 'password2' : 'text'" placeholder="password2"
+                    (ngModel)="(password2)" id="password2" name="password2" #password2="ngModel"
+                    appConfirmEqualValidator="password" required maxlength="20" />
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password2'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <div *ngIf="password2.invalid && (password2.dirty || password2.touched)"
+                  class="alert alert-danger">
+                  <div *ngIf="password2.errors?.required">This field is required.</div>
+
+                  <div *ngIf="password2.errors?.notEqual && !password2.errors?.required">
+                    Passwords must match.
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <td><button id="goLeft" class="off">Login</button></td>
+            <td>
+              <button mat-raised-button type="submit" [disabled]="!formData.valid" class="auth-btn text-center">
+                Sign Up <i class="fas fa-sign-in-alt"></i>
+              </button>
+            </td>
+          </table>
+        </form>
+      </div>
+    </div>
+    <div class="right">
+      <div class="content">
+        <h2>Login</h2>
+        <form #formData="ngForm" (ngSubmit)="onSubmit(formData)">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Enter your username</mat-label>
+            <input placeholder="username" (ngModel)="(username)" id="username" name="username" #username="ngModel"
+              minlength="3" maxlength="30" />
+            <mat-label>Enter your password</mat-label>
+            <input [type]="hide ? 'password' : 'text'" placeholder="password" (ngModel)="(password)" id="password"
+              name="password" #password="ngModel" required maxlength="20" />
+            <span class="hide" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{
+                hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+            </span>
+          </mat-form-field>
+          <button id="goRight" class="off">Sign Up ?</button>
+          <button mat-raised-button type="submit" class="auth-btn">
+            Sign In <i class="fas fa-sign-in-alt"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
